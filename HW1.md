@@ -83,7 +83,7 @@ If you run the following training command to train an agent with Decentalized Tr
 
 Command for Task 2:
 ```shell
-python multigrid/scripts/train.py --local-mode False --env MultiGrid-CompetativeRedBlueDoor-v3-DTDE-Red-Single --num-workers 10 --num-gpus 0 --name --training-scheme DTDE
+python multigrid/scripts/train.py --local-mode False --env MultiGrid-CompetativeRedBlueDoor-v3-DTDE-Red-Single --num-workers 10 --num-gpus 0 --name test2 --training-scheme DTDE
 ```
 
 **Tips:**
@@ -116,6 +116,12 @@ episode_len_mean|ray/tune/episode_reward_mean|episode_reward_min|entropy|vf|loss
 - To visualize a specific checkpoint, use the following command:
 ```shell
 python multigrid/scripts/visualize.py --env MultiGrid-CompetativeRedBlueDoor-v3-DTDE-Red-Single  --num-episodes 10  --load-dir submission/ray_results/PPO/PPO_MultiGrid-CompetativeRedBlueDoor-v3-DTDE-Red-Single_XXXX/checkpoint_YYY/checkpoint-YYY --render-mode human --gif DTDE-Red-Single
+```
+```
+python multigrid/scripts/visualize.py --env MultiGrid-CompetativeRedBlueDoor-v3-DTDE-Red-Single  --num-episodes 10  --load-dir submission/ray_results/PPO/PPO_MultiGrid-CompetativeRedBlueDoor-v3-DTDE-Red-Single_5b932_00000_0_2023-09-13_17-49-04/checkpoint_000080/ --render-mode human --gif DTDE-Red-Single
+
+
+
 ```
 ##### Replace `XXXX` and `YYY` with the corresponding number of your checkpoint.
 
