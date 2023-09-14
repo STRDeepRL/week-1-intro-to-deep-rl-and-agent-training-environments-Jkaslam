@@ -468,6 +468,7 @@ class CompetativeRedBlueDoorEnvV3(MultiGridEnv):
             else:
                 # Invalid pickup action
                 # FIXME - Your agent can perform this bad action in every time step. You should reset this value in proportion to the total horizon and the ultimate goal oriented reward
+                #reward[agent_index] -= self.step_count/self.max_steps * 2
                 reward[agent_index] -= self.reward_schemes[agent.name]["invalid_pickup_dense_penalty"]  # OG  0.2
 
     def step(self, actions):
@@ -860,6 +861,7 @@ class CompetativeRedBlueDoorEnvV2(MultiGridEnv):
                 else:
                     # If we are grabbing bad stuff
                     # FIXME - Your agent can perform this bad action in every time step. You should reset this value in proportion to the total horizon and the ultimate goal oriented reward
+                    #reward[agent_id] -= self.step_count/self.max_steps * 2
                     reward[agent_id] -= 0.001  # OG  0.2
 
             # TODO - Add Dense Rewards to encourage agent to learn faster
